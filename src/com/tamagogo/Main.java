@@ -35,10 +35,9 @@ public class Main {
 		Boolean isCorrectName = false;
 		
 		System.out.println("Veillez choisir le nom du tamagogo");
+		name = saisie.next();
 		
 		while(!isCorrectName) {
-			
-			name = saisie.next();
 			
 			// confirm name ( yes or no ))
 			System.out.println("Votre Tamagogo s'appel bien "+ name +" ?");
@@ -50,13 +49,33 @@ public class Main {
 			   req.equals("o") || 
 			   req.equals("y")) {
 				isCorrectName = true;
-				Tamagogo monster = new Tamagogo(name, 50, 50, 50);
 				break;
 			}
 			else{
 				System.out.println("Veillez choisir le nom du tamagogo");
+				name = saisie.next();
 			}
 		}
+		
+		Tamagogo monster = new Tamagogo(name, 50, 50, 50);
+		
+		System.out.println("Veuillez choisir une action");
+		System.out.println(
+				"---------------------------\r\n\r\n"+
+				" Statistiques\r\n\r\n"+
+				" Nom : " +monster.getName()+"\r\n"+
+				" * Vie : "+monster.getLife()+"/50\r\n"+
+				" * Faim : "+monster.getHunger()+"/50\r\n"+
+				" * Sommeil : "+monster.getSleep()+"/50\r\n\r\n" +
+				"---------------------------\r\n\r\n"+
+				" Choix disonible\r\n"+
+				"  *\r\n"+
+				"  *\r\n\r\n"+
+				" Choix non disonible\r\n"+
+				"  *\r\n"+
+				"  *\r\n\r\n"+
+				"---------------------------\r\n"
+				);
 		saisie.close();
 	}
 
