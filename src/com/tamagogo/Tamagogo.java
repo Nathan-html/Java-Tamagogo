@@ -1,34 +1,43 @@
 package com.tamagogo;
 
-import java.util.Scanner;
-
 public class Tamagogo {
-
-	public static void main(String[] args) {
-		
-		// global element
-		Scanner saisie = new Scanner(System.in);
-		
-		// choose your name
-		System.out.println("Bienvenu sur Tamagogo\r\n"
-			    +"        ,o-o-o.o.\r\n"
-				+ "       o-o      o\r\n"
-				+ "      _O_ `o-o-o'\r\n"
-				+ "    ,'   `.\r\n"
-				+ "   / _/`.-.\\\r\n"
-				+ "  : \\|\"\"\"|< :\r\n"
-				+ "  |-<|___|/-|\r\n"
-				+ "  :  `'\\/`' :\r\n"
-				+ "   `. OOO ,'\r\n"
-				+ "     \"\"\"\"\"\r\n"
-				+ "Un Tamgogo viens de naitre, \r\n"
-				+ "Veillez lui choisir un nom");
-		String name = saisie.next();
-		
-		// confirm name ( yes or no (y or n) oui ou non (o ou n))
-		System.out.println("Votre Tamagogo s'appel bien "+ name +" ?");
-		
-		saisie.close();
+	private String name;
+	private int life;
+	private int hunger;
+	private int sleep;
+	
+	public Tamagogo(String name, int life, int hunger, int sleep) {
+		this.name = name;
+		this.setLife(life);
+		this.setHunger(hunger);
+		this.setSleep(sleep);
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public int getLife() {
+		return life;
+	}
+
+	public void setLife(int life) {
+		this.life = life;
+	}
+
+	public int getHunger() {
+		return hunger;
+	}
+
+	public void setHunger(int hunger) {
+		this.hunger = hunger;
+	}
+
+	public int getSleep() {
+		return sleep;
+	}
+
+	public void setSleep(int sleep) {
+		this.sleep = sleep;
+	}
 }
