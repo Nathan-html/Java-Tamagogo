@@ -57,26 +57,65 @@ public class Main {
 			}
 		}
 		
-		Tamagogo monster = new Tamagogo(name, 50, 50, 50);
+		Tamagogo monster = new Tamagogo(name, 20, 10, 10);
 		
-		System.out.println("Veuillez choisir une action");
-		System.out.println(
-				"---------------------------\r\n\r\n"+
-				" Statistiques\r\n\r\n"+
-				" Nom : " +monster.getName()+"\r\n"+
-				" * Vie : "+monster.getLife()+"/50\r\n"+
-				" * Faim : "+monster.getHunger()+"/50\r\n"+
-				" * Sommeil : "+monster.getSleep()+"/50\r\n\r\n" +
-				"---------------------------\r\n\r\n"+
-				" Choix disonible\r\n"+
-				"  *\r\n"+
-				"  *\r\n\r\n"+
-				" Choix non disonible\r\n"+
-				"  *\r\n"+
-				"  *\r\n\r\n"+
-				"---------------------------\r\n"
-				);
+		while(monster.getLife() >= 0) {
+			
+			System.out.println("Veuillez choisir une action");
+			System.out.println(
+					"---------------------------\r\n\r\n"+
+					" Statistiques\r\n"+
+					"  * Nom : " +monster.getName()+"\r\n"+
+					"  * Vie : "+monster.getLife()+"/50\r\n"+
+					"  * Faim : "+monster.getHunger()+"/50\r\n"+
+					"  * Sommeil : "+monster.getSleep()+"/50\r\n\r\n" +
+					"---------------------------\r\n\r\n"+
+					" Actions\r\n"+
+					"  * manger\r\n"+
+					"  * dormir\r\n"+
+					"  * sport\r\n\r\n"+
+					"---------------------------\r\n"
+					);
+
+			String action = saisie.next();
+			
+			if(action.equals("manger")) {
+				monster.setLife(monster.getLife()+2);
+				monster.setHunger(monster.getHunger()+5);
+				monster.setSleep(monster.getSleep()-8);
+			}
+			else if(action.equals("dormir")) {
+				monster.setLife(monster.getLife()+5);
+				monster.setHunger(monster.getHunger()+5);
+				monster.setSleep(monster.getSleep()+10);
+			}
+			else if(action.equals("sport")) {
+				monster.setLife(monster.getLife()-10);
+				monster.setHunger(monster.getHunger()-15);
+				monster.setSleep(monster.getSleep()-15);
+			}
+			else{
+				System.out.println("je n'ai pas compris");
+			}
+		}
 		saisie.close();
+		System.out.println(
+				  " _.---,._,'\r\n"
+				+ "/' _.--.<\r\n"
+				+ "  /'     `'\r\n"
+				+ "/' _.---._____\r\n"
+				+ "\\.'   ___, .-'`\r\n"
+				+ "    /'    \\\\             .\r\n"
+				+ "  /'       `-.          -|-\r\n"
+				+ " |                       |\r\n"
+				+ " |                   .-'~~~`-.\r\n"
+				+ " |                 .'         `.\r\n"
+				+ " |                 |  R  I  P  |\r\n"
+				+ " |                 |           |\r\n"
+				+ " |                 |           |\r\n"
+				+ "  \\              \\\\|           |//\r\n"
+				+ "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+		System.out.println("HOO NON "+monster.getName().toUpperCase()+" EST MORT T^T");
 	}
 
 }
