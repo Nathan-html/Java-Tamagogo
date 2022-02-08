@@ -80,19 +80,13 @@ public class Main {
 			String action = saisie.next();
 			
 			if(action.equals("manger")) {
-				monster.setLife(monster.getLife()+2);
-				monster.setHunger(monster.getHunger()+5);
-				monster.setSleep(monster.getSleep()-8);
+				monster.toEat();
 			}
 			else if(action.equals("dormir")) {
-				monster.setLife(monster.getLife()+5);
-				monster.setHunger(monster.getHunger()+5);
-				monster.setSleep(monster.getSleep()+10);
+				monster.toSleep();
 			}
 			else if(action.equals("sport")) {
-				monster.setLife(monster.getLife()-10);
-				monster.setHunger(monster.getHunger()-15);
-				monster.setSleep(monster.getSleep()-15);
+				monster.playSports();
 			}
 			else{
 				System.out.println("je n'ai pas compris");

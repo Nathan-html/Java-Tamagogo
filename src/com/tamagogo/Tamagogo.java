@@ -13,6 +13,23 @@ public class Tamagogo {
 		this.setSleep(sleep);
 	}
 
+	public void toEat() {
+		this.setLife(this.getLife()+2);
+		this.setHunger(this.getHunger()+5);
+		this.setSleep(this.getSleep()-8);
+	}
+	
+	public void toSleep() {
+		this.setLife(this.getLife()+5);
+		this.setHunger(this.getHunger()+5);
+		this.setSleep(this.getSleep()+10);
+	}
+	public void playSports() {
+		this.setLife(this.getLife()-10);
+		this.setHunger(this.getHunger()-15);
+		this.setSleep(this.getSleep()-15);
+	}
+	
 	public String getName() {
 		return name;
 	}
